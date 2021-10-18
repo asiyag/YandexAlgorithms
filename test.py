@@ -156,3 +156,24 @@ for start in range(len(seq) // 2):
         for i in range(start - 1, -1, -1):
             ans.append(seq[i])
 print(len(ans))
+
+# for i in range(k):
+#     if ans == -1 and pos[i] >= mid:
+#         ans = pos[i]
+#         if (ans >= mid and ans <= mid):
+#             print(ans)
+#         else:
+#             ans = f'{pos[i - 1]} {pos[i]}'
+#             print(ans)
+
+
+if l % 2 == 0:  # точно будет два блока
+    ans = f'{pos[i - 1]} {pos[i]}'
+    print(ans)
+else:  # если нечетное кол-во. то может быть один = середине
+    if (pos[i] >= mid and pos[i] < mid + 1):
+        print(pos[i])
+    else:  # два, если нет блока совпадающего с серединой
+        ans = f'{pos[i - 1]} {pos[i]}'
+        print(ans)
+
